@@ -39,53 +39,53 @@ var app = angular.module('app', ['ui.tree']);
           }, {
             id: 2,
             parentId: 0,
-            username: "Hermoine",
+            username: "Ann",
             text: "It's the Lorem Ipsum Cupcake.",
             children: [{
               id: 3,
               parentId: 3,
               username: "Ron",
-              text: "I don't find it fascinating, Mark. Why would it be?",
+              text: "That's funny!",
               children: [{
                 id: 4,
                 parentId: 4,
                 username: "Mario",
-                text: "Everthing about him is fascinating lol jk.",
+                text: "I heard the movie was scary",
                 children: []
               }]
             }, {
               id: 5,
               parentId: 3,
               username: "Luigi",
-              text: "I think Mark is right, it is fascinating somehow",
+              text: "I think it was overrated!",
               children: []
             }]
           }, {
             id: 6,
             parentId: 0,
             username: "Sheldon",
-            text: "I'm glad to have been a part of it. Epic reddit history in the making.",
+            text: "Definitely want to see that movie.",
             children: []
           }, {
             id: 7,
             parentId: 0,
             username: "Leonard",
-            text: "Gifs should not be edited by him.",
+            text: "Onto another topic guys",
             children: [{
               id: 8,
               parentId: 8,
               username: "Howard",
-              text: "Why not him, Rose? Let him edit as many as he wants lol",
+              text: "Yeah.. this thread is getting kinda boring.",
               children: [{
                 id: 9,
                 parentId: 9,
                 username: "Raj",
-                text: "Yes, he should be able to edit them as he wants :)",
+                text: "LOL!",
                 children: [{
                   id: 10,
                   parentId: 10,
                   username: "Penny",
-                  text: "But not everyone has Gif editing skills, at least not great skills.",
+                  text: "blah blah blah!",
                   children: []
                 }]
               }]
@@ -93,14 +93,14 @@ var app = angular.module('app', ['ui.tree']);
               id: 11,
               parentId: 8,
               username: "Bernadette",
-              text: "Gifs suck anyways.",
+              text: "You guys are too funny.",
               children: []
             }]
           }, {
             id: 12,
             parentId: 0,
             username: "Amy",
-            text: "I heard he once tried to sell a picture of a gif back to a photographer.",
+            text: "Yeah this is just a random thread for people to share their opinions.",
             children: []
           }],
         }, {
@@ -112,58 +112,58 @@ var app = angular.module('app', ['ui.tree']);
             id: 14,
             parentId: 2,
             username: "Joe",
-            text: "Wasn't he born with regular claws and only gained the adamantium claws (and skeleton) later?",
+            text: "Another lorem ipsum, eh?",
             children: []
           }, {
             id: 15,
             parentId: 2,
             username: "John",
-            text: "I always thought his healing factor was the coolest thing about him.",
+            text: "This time it's the Bacon one",
             children: [{
               id: 16,
               parentId: 4,
               username: "Matt",
-              text: "Nothing cool about Wolverine in my opinion.",
+              text: "Didn't know that there's a variety of them",
               children: [{
                 id: 17,
                 parentId: 5,
                 username: "Rick",
-                text: "Don't be such a hater Angel lol. Wolverine is cool.",
+                text: "There's also a Harry Potter one",
                 children: []
               }]
             }, {
               id: 18,
               parentId: 4,
               username: "Bart",
-              text: "Heaing factor IS the best thing about the Wolverine!!!",
+              text: "Ohhhh I love Harry Potter!",
               children: []
             }]
           }, {
             id: 19,
             parentId: 2,
             username: "Homer",
-            text: "Even he can't fully survive it on a long enough timeline. Adamantium is poisonous. Just having it in his body forces his healing factor to run nonstop.",
+            text: "Who doesn't, Bart??",
             children: []
           }, {
             id: 20,
             parentId: 2,
             username: "Stan",
-            text: "Was adamantium being poisonous a recent plot device for the Old Man Logan series or has it always been poisonous?",
+            text: "Definitely the best movie ever!",
             children: [{
               id: 21,
               parentId: 9,
               username: "Kyle",
-              text: "Pretty sure its a concept that has been brought up in the comics.",
+              text: "I wouldn't say best movie ever.",
               children: [{
                 id: 22,
                 parentId: 10,
                 username: "Cartman",
-                text: "I remember that series. He went after the Honor Sword, and his healing was off the charts while battling the guys holding it.",
+                text: "I mean, I like Harry Potter, but I agree with Kyle here. There are better movies out there.",
                 children: [{
                   id: 23,
                   parentId: 11,
                   username: "Kenny",
-                  text: "What's an Honor Sword? I'm confused",
+                  text: "Just like how everyone thinks Star Wars is the best movie.",
                   children: []
                 }]
               }]
@@ -171,14 +171,14 @@ var app = angular.module('app', ['ui.tree']);
               id: 24,
               parentId: 9,
               username: "Nick",
-              text: "Of course is a concept!",
+              text: "Never liked Star Wars",
               children: []
             }]
           }, {
             id: 25,
             parentId: 2,
             username: "Kevin",
-            text: "Also how deadpool's healing factor is several times faster (e.g. a gunshot wound on deadpool heals in a second or two instead of over a few minutes on wolverine) despite deadpool's healing.",
+            text: "Me too! Not interested in re-watching it.",
             children: []
           }],
         }];
