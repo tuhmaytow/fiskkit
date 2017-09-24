@@ -21,16 +21,19 @@
     <script type="text/ng-template" id="nodes_renderer.html">
     <div ui-tree-handle class="tree-node tree-node-content">
 
-      <a class="btn btn-success btn-xs" ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span>
+
+        <p><span class="usernames">{{ node.username | uppercase }} </span><span class="sentence">{{ node.sentence }}</span></p>
+
+
         <!--number of comments -->
-        <span class="glyphicon glyphicon-comment"></span>
-        <ng-pluralize count="node.children.length" when="{1: '1 comment', 'other': '{{ node.children.length }} comments'}">
-        </ng-pluralize>
-      </a>
+        <a class="btn btn-success btn-xs" ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span>
+          <span class="glyphicon glyphicon-comment"></span>
+          <ng-pluralize count="node.children.length" when="{1: '1 comment', 'other': '{{ node.children.length }} comments'}"></ng-pluralize>
+        </a>
+        <a class="btn btn-success btn-xs" ng-click="toggleDropdown(node)"><span class="glyphicon glyphicon-pencil"></span> Add Comment
+        </a>
 
       <!--show comment form -->
-      <a class="btn btn-success btn-xs" ng-click="toggleDropdown(node)"><span class="glyphicon glyphicon-pencil"></span> Add Comment
-      </a>
       <span ng-show="node.showForm">
         <div class="comment">
           <form class="form-inline" ng-submit="newComment(node, comment)">
@@ -41,11 +44,6 @@
             <input class="btn btn-primary" type="submit" value="Add">
           </form>
         </div>
-      </span>
-
-      <span>
-        {{ node.username | uppercase }}<br></br>
-        {{ node.sentence }}
       </span>
 
     </div>

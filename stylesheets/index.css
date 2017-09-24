@@ -2,6 +2,18 @@
   margin-right: 8px;
 }
 
+.usernames {
+  font-size: 20px;
+}
+
+.sentence {
+  font-size: 15px;
+}
+
+p span {
+  display:block;
+}
+
 .angular-ui-tree-handle {
   background: #f8faff;
   border: 1px solid #dae2ea;
@@ -10,10 +22,6 @@
   margin-top: 10px;
 }
 
-.comment {
-  opacity: 1;
-}
+@media screen and (max-width: 1024px) {
 
-.comment.ng-hide-add, .comment.ng-hide-remove {
-  transition: 1s linear all;
 }

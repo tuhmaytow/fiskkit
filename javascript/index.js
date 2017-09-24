@@ -29,12 +29,12 @@ var app = angular.module('app', ['ui.tree']);
           id: 0,
           parentId: null,
           username: "",
-          sentence: 'Dessert pie tootsie roll wafer muffin lollipop cake marshmallow sweet. Cotton candy lollipop gingerbread. Tiramisu cake caramels. Danish brownie chocolate.',
+          sentence: "Dessert pie tootsie roll wafer muffin lollipop cake marshmallow sweet. Cotton candy lollipop gingerbread. Tiramisu cake caramels. Danish brownie chocolate.",
           children: [{
             id: 1,
             parentId: 0,
             username: "Harry",
-            sentence: 'What are you talking about?',
+            sentence: "What does that mean?",
             children: []
           }, {
             id: 2,
@@ -107,7 +107,7 @@ var app = angular.module('app', ['ui.tree']);
           id: 13,
           parentId: null,
           username: "",
-          sentence: 'Spicy jalapeno bacon ipsum dolor amet short ribs beef ribs t-bone kielbasa, chicken kevin andouille hamburger prosciutto ham hock shank. Fatback swine pastrami, flank short ribs prosciutto beef tri-tip.',
+          sentence: "Spicy jalapeno bacon ipsum dolor amet short ribs beef ribs t-bone kielbasa, chicken kevin andouille hamburger prosciutto ham hock shank.",
           children: [{
             id: 14,
             parentId: 2,
