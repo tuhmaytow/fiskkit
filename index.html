@@ -22,57 +22,37 @@
     <div ui-tree-handle class="tree-node tree-node-content">
 
       <a class="btn btn-success btn-xs" ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span>
+        <!--number of comments -->
+        <span class="glyphicon glyphicon-comment"></span>
+        <ng-pluralize count="node.children.length" when="{1: '1 comment', 'other': '{{ node.children.length }} comments'}">
+        </ng-pluralize>
       </a>
 
-      <span>
-        {{ node.username | uppercase }}
-        {{ node.text }}
-      </span>
-
-      <!--shows number of comments -->
-      <!-- <button class="hoverable" ng-click="toggleComment(comment)">
-        <span class="glyphicon glyphicon-comment"></span>
-        <ng-pluralize count="comment.children.length" when="{1: '1 comment', 'other': '{{ comment.children.length }} comments'}">
-        </ng-pluralize>
-      </button> -->
-      <span class="glyphicon glyphicon-comment"></span>
-      <ng-pluralize count="node.children.length" when="{1: '1 comment', 'other': '{{ node.children.length }} comments'}">
-      </ng-pluralize>
-
       <!--show comment form -->
-      <!-- <button ng-click="toggleDropdown()"><span class="glyphicon glyphicon-pencil"></span> Add Comment
-      </button>
-
-      <div ng-show="dropDownIsVisible">
-        <div class="comment">
-          <label for="username"></label>
-          <input type="text" placeholder="Username" class="form-control" ng-model="username" required>
-          <label for="text"></label>
-          <input type="text" placeholder="Comment" class="form-control" ng-model="comment" required> -->
-
-          <!--add comment -->
-          <!-- <a class="btn btn-primary" type="submit" value="Add" data-nodrag ng-click="newSubItem(this)" > Add</a>
-        </div>
-      </div> -->
-      <button ng-click="toggleDropdown(node)"><span class="glyphicon glyphicon-pencil"></span> Add Comment
-      </button>
+      <a class="btn btn-success btn-xs" ng-click="toggleDropdown(node)"><span class="glyphicon glyphicon-pencil"></span> Add Comment
+      </a>
       <span ng-show="node.showForm">
         <div class="comment">
           <form class="form-inline" ng-submit="newComment(node, comment)">
             <label for="username"></label>
             <input type="text" placeholder="Username" class="form-control" ng-model="comment.username" required>
             <label for="text"></label>
-            <input type="text" placeholder="Comment" class="form-control" ng-model="comment.text" required>
+            <input type="text" placeholder="Comment" class="form-control" ng-model="comment.sentence" required>
             <input class="btn btn-primary" type="submit" value="Add">
           </form>
         </div>
       </span>
-    </div>
-      <!-- end of ui-tree-handle -->
 
+      <span>
+        {{ node.username | uppercase }}<br></br>
+        {{ node.sentence }}
+      </span>
+
+    </div>
+    <!-- end of ui-tree-handle -->
 
     <!--renders child comments -->
-    <ol ui-tree-nodes="" ng-model="node.text" ng-class="{hidden: collapsed}" class-"childComments">
+    <ol ui-tree-nodes="" ng-model="node.sentence" ng-class="{hidden: collapsed}" class-"childComments">
       <li ng-repeat="node in node.children" ui-tree-node ng-include="'nodes_renderer.html'" collapsed="true"></li>
     </ol>
     </script>
