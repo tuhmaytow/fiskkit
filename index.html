@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fiskkit</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css">
+  <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+
+<body>
+  <div ng-controller="myController">
+    <h1>Comments:</h1>
+
+    <div>
+      <button ng-click="expandAll()">Expand All</button>
+      <button ng-click="collapseAll()">Collapse All</button>
+    </div>
+
+    <script type="text/ng-template" id="nodes_renderer.html">
+    <div ui-tree-handle class="tree-node tree-node-content">
+
+      <a class="btn btn-success btn-xs" ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span>
+      </a>
+
+      <span>
+        {{ node.username | uppercase }}
+        {{ node.text }}
+      </span>
+
+      <!--shows number of comments -->
+      <!-- <button class="hoverable" ng-click="toggleComment(comment)">
+        <span class="glyphicon glyphicon-comment"></span>
+        <ng-pluralize count="comment.children.length" when="{1: '1 comment', 'other': '{{ comment.children.length }} comments'}">
+        </ng-pluralize>
+      </button> -->
+      <span class="glyphicon glyphicon-comment"></span>
+      <ng-pluralize count="node.children.length" when="{1: '1 comment', 'other': '{{ node.children.length }} comments'}">
+      </ng-pluralize>
+
+      <!--show comment form -->
+      <!-- <button ng-click="toggleDropdown()"><span class="glyphicon glyphicon-pencil"></span> Add Comment
+      </button>
+
+      <div ng-show="dropDownIsVisible">
+        <div class="comment">
+          <label for="username"></label>
+          <input type="text" placeholder="Username" class="form-control" ng-model="username" required>
+          <label for="text"></label>
+          <input type="text" placeholder="Comment" class="form-control" ng-model="comment" required> -->
+
+          <!--add comment -->
+          <!-- <a class="btn btn-primary" type="submit" value="Add" data-nodrag ng-click="newSubItem(this)" > Add</a>
+        </div>
+      </div> -->
+      <button ng-click="toggleDropdown(node)"><span class="glyphicon glyphicon-pencil"></span> Add Comment
+      </button>
+      <span ng-show="node.showForm">
+        <div class="comment">
+          <form class="form-inline" ng-submit="newComment(node, comment)">
+            <label for="username"></label>
+            <input type="text" placeholder="Username" class="form-control" ng-model="comment.username" required>
+            <label for="text"></label>
+            <input type="text" placeholder="Comment" class="form-control" ng-model="comment.text" required>
+            <input class="btn btn-primary" type="submit" value="Add">
+          </form>
+        </div>
+      </span>
+    </div>
+      <!-- end of ui-tree-handle -->
+
+
+    <!--renders child comments -->
+    <ol ui-tree-nodes="" ng-model="node.text" ng-class="{hidden: collapsed}" class-"childComments">
+      <li ng-repeat="node in node.children" ui-tree-node ng-include="'nodes_renderer.html'" collapsed="true"></li>
+    </ol>
+    </script>
+
+    <!--renders all comments -->
+    <div ui-tree data-drag-enabled="false" id="tree-root">
+      <ol ui-tree-nodes="" ng-model="data">
+        <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'" collapsed="true"></li>
+      </ol>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+  <script src="javascript/index.js"></script>
+</body>
+</html>
